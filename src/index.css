@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* --- Custom Style Opsional --- */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Membuat scroll antar section jadi halus saat klik menu Navbar */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Standarisasi body agar tidak ada margin aneh dan background rapi */
+body {
+  margin: 0;
+  display: flex;
+  place-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Ini sama dengan bg-slate-50 */
+}
+
+#root {
+  width: 100%;
+}
