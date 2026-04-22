@@ -1,28 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
-/* --- Custom Style Opsional --- */
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0a0a0a;
+    color: #a1a1aa;
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(255,255,255,0.08); }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
 }
 
-/* Membuat scroll antar section jadi halus saat klik menu Navbar */
-html {
-  scroll-behavior: smooth;
-}
+@layer utilities {
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+  .animation-fill-both { animation-fill-mode: both; }
 
-/* Standarisasi body agar tidak ada margin aneh dan background rapi */
-body {
-  margin: 0;
-  display: flex;
-  place-content: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #f8fafc; /* Ini sama dengan bg-slate-50 */
-}
-
-#root {
-  width: 100%;
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+  .animate-fade-up { animation: fadeUp 0.6s ease both; }
+  .animate-blink   { animation: blink 1.1s step-end infinite; }
 }
